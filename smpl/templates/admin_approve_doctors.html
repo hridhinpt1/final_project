@@ -1,0 +1,51 @@
+{% extends 'admin_temp.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <th scope="col">Sl.no</th>
+      <th scope="col">Name</th>
+{#      <th scope="col">Login id</th>#}
+      <th scope="col">DOB</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Address</th>
+{#      <th scope="col">District</th>#}
+{#      <th scope="col">Place</th>#}
+{#      <th scope="col">Pin</th>#}
+      <th scope="col">Area of Specification</th>
+      <th scope="col">Experience</th>
+      <th scope="col">Image</th>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i["Doc_name"] }}</td>
+{#      <td>{{ i["Doc_login_id"]}}</td>#}
+      <td>{{ i["Doc_dob"]}}</td>
+      <td>{{ i["Doc_gender"]}}</td>
+      <td>{{ i["Doc_email"]}}</td>
+      <td>{{ i["Doc_phone"]}}</td>
+
+      <td>{{ i["Doc_state"]}}<br> {{ i["Doc_district"]}}<br>{{ i["Doc_place"]}}<br>{{ i["Doc_pin"]}}</td>
+{#      <td>{{ i["Doc_district"]}}</td>#}
+{#      <td>{{ i["Doc_place"]}}</td>#}
+{#      <td>{{ i["Doc_pin"]}}</td>#}
+      <td>{{ i["Doc_area_of_spec"]}}</td>
+      <td>{{i["Doc_Experince"]}}</td>
+      <td><img src="{{ i["Doc_img"]}}" height="100px"width="100px"></td>
+
+      <td><p><a href="/admin_accept_reject_doctor/{{ i["Doc_login_id"] }}/doctor">Approve</a></p>
+      <p><a href="/admin_accept_reject_doctor/{{ i["Doc_login_id"] }}/reject">Reject</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+
+{% endblock %}

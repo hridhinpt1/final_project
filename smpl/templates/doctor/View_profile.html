@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/dr_register_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1">
+    <tr>
+      <th scope="row">Name</th>
+      <td>{{ data["Doc_name"] }}
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td>{{ data["Doc_dob"] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td>
+         {{ data["Doc_gender"] }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td>{{ data["Doc_email"] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Experince</th>
+      <td>{{ data["Doc_Experince"] }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Upload Image</th>
+      <td><img src ="{{ data["Doc_img"] }}"height="100px"width="100px"></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone No</th>
+      <td>{{ data["Doc_phone"] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Area Of Specification</th>
+      <td>{{ data["Doc_area_of_spec"] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">State</th>
+      <td>{{ data["Doc_state"] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">District</th>
+      <td>{{ data["Doc_district"] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td>{{ data["Doc_place"] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td>{{ data["Doc_pin"] }}</td>
+    </tr>
+       <tr>
+      <th scope="row">Latitude</th>
+      <td>{{ data["Doc_lat"] }}</td>
+    </tr>
+       <tr>
+      <th scope="row">Longitude</th>
+      <td>{{ data["Doc_log"] }}</td>
+    </tr>
+
+
+{#    <tr>#}
+{#      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" /></th>#}
+{#    </tr>#}
+  </table>
+</form>
+</body>
+</html>

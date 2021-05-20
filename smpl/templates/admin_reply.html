@@ -1,0 +1,19 @@
+{% extends 'admin_temp.html' %}
+{% block body %}
+
+<body>
+
+<form id="form1" name="form1" method="post" action="/Admin_reply_post">
+  <table class="table table-hover">
+    <tr>
+      <th scope="row">Reply<input type="hidden" value="{{ cid }}" name="cid"/></th>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

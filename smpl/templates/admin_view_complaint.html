@@ -1,0 +1,35 @@
+{% extends 'admin_temp.html' %}
+{% block body %}
+
+<body>
+<tr>
+    <td>
+       <th> <input type="submit" name="button" id="button" value="HOME" /></th>
+    </td>
+</tr>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <th width="51" scope="col">Sl.no</th>
+      <th width="48" scope="col">Date</th>
+      <th width="48" scope="col">User</th>
+      <th width="108" scope="col">Complaint</th>
+      <th width="71" scope="col">Reply</th>
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i["C_date"] }}</td>
+      <td>{{ i["U_name"] }}</td>
+      <td>{{ i["C_complaint"] }}</td>
+        {% if i["C_reply"]=="pending" %}
+      <td><a href="/admin_reply/{{ i["C_id"] }}">Reply</a></td>
+    {% else %}
+    <td>{{ i["C_reply"] }}</td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

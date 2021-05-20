@@ -1,0 +1,44 @@
+{% extends 'admin_temp.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/admin_search_user">
+
+<table class="table table-hover">
+  <tr>
+    <th colspan="4" scope="col">
+
+      <input type="text" name="textfield" id="textfield" />
+  </th>
+    <th scope="col">
+      <input type="submit" name="button" id="button" value="Search" />
+    </th>
+  </tr>
+  <tr>
+    <td>Sl.no</td>
+    <td>User Name</td>
+    <td>Dob</td>
+    <td>Gender</td>
+    <td>Email</td>
+    <td>Phone</td>
+    <td>District</td>
+    <td>Pin</td>
+  </tr>
+    {% for i in  data %}
+  <tr>
+    <td>{{ loop.index }}</td>
+
+    <td>{{ i["U_name"] }}</td>
+    <td>{{ i["U_dob"] }}</td>
+    <td>{{ i["U_gender"] }}</td>
+    <td>{{ i["U_email"] }}</td>
+    <td>{{ i["U_phone"] }}</td>
+    <td>{{ i["U_district"] }}</td>
+    <td>{{ i["U_pin"] }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}
